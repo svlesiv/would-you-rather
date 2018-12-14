@@ -1,6 +1,7 @@
+import { saveQuestion } from '../utils/api'
+
 export const GET_QUESTIONS = 'GET_QUESTIONS'
 export const ADD_QUESTION = 'ADD_QUESTION'
-
 
 export function getQuestions (questions) {
   return {
@@ -24,6 +25,6 @@ export function handleAddQuestion (optionOne, optionTwo) {
       optionTwo,
       author: authedUser
     })
-      .then((question) => dispatch(addQuestion(question)))      
+      .then((question) => dispatch(addQuestion(question)))
   }
 }
