@@ -6,7 +6,7 @@ export const ADD_QUESTION = 'ADD_QUESTION'
 export function getQuestions (questions) {
   return {
     type: GET_QUESTIONS,
-    question,
+    questions,
   }
 }
 
