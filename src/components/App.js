@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { handleInitialData } from '../actions/shared'
 
-//will be deleted
 import HomePage from './HomePage'
+import QuestionPage from './QuestionPage'
 
 class App extends Component {
 
@@ -14,10 +15,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <p>This is my App</p>
-        <HomePage />
-      </div>
+      <Router>
+        <div>
+          <Route path='/' exact component={HomePage} />
+          <Route path='/question/:id' component={QuestionPage} />
+        </div>
+      </Router>
     );
   }
 }

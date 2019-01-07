@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PreviewQuestion from './PreviewQuestion'
-import QuestionsStatistic from './QuestionsStatistic'
 
 class HomePage extends Component {
   render() {
@@ -14,14 +13,13 @@ class HomePage extends Component {
         <ul >
           {this.props.questionIds.map((id) => (
             <li key={id}>
-              <div>QUESTION ID: {id}</div>
               <PreviewQuestion id={id}/>
             </li>
           ))}
         </ul>
 
-        //tab for answered question
-        <QuestionsStatistic />
+        {//tab for answered question
+        }
       </div>
     )
   }
