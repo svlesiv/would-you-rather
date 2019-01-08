@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import {connect} from 'react-redux'
-import {logIn} from '../actions/authedUser'
+import { connect } from 'react-redux'
+import { logIn } from '../actions/authedUser'
+import { Redirect } from 'react-router-dom'
 
 class Login extends Component {
   state = {
-    username: ''
+    username: '',
+    toHome: false,
   }
 
   handleChange = (e) => {
@@ -17,10 +19,20 @@ class Login extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     const { dispatch } = this.props
-      dispatch(logIn(this.state.username))    
+    dispatch(logIn(this.state.username))
+
+    this.setState(() => ({
+     toHome: true,
+   }))
   }
 
   render() {
+
+    {/* Redirect to Home if submitted */}
+     if (this.state.toHome === true) {
+      return <Redirect to='/' />
+    }
+
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
