@@ -9,6 +9,7 @@ import Login from './Login'
 import HomePage from './HomePage'
 import NewQuestion from './NewQuestion'
 import QuestionPage from './QuestionPage'
+import LeaderBoard from './LeaderBoard'
 
 class App extends Component {
 
@@ -27,6 +28,7 @@ class App extends Component {
             <Route path='/' exact component={HomePage}/>
             <Route path='/new' exact component={NewQuestion}/>
             <Route path='/question/:id' exact component={QuestionPage}/>
+            <Route path='/leaders' exact component={LeaderBoard}/>
           </div>
         </div>
       </Router>

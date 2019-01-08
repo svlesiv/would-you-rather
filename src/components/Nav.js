@@ -16,7 +16,7 @@ export default function Nav () {
           </NavLink>
         </li>
         <li>
-          <NavLink to='/leaderBoard' activeClassName='active'>
+          <NavLink to='/leaders' activeClassName='active'>
             Leader Board
           </NavLink>
         </li>
