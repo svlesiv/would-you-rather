@@ -6,7 +6,7 @@ class Login extends Component {
   state = {
     username: ''
   }
-    
+
   handleChange = (e) => {
     const username = e.target.value;
     this.setState({
@@ -17,8 +17,7 @@ class Login extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     const { dispatch } = this.props
-      dispatch(logIn(this.state.username))
-      console.log(this.state.username);
+      dispatch(logIn(this.state.username))    
   }
 
   render() {
