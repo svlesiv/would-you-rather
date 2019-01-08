@@ -4,6 +4,11 @@ import { NavLink } from 'react-router-dom'
 import { logOut } from '../actions/authedUser'
 
 class Nav extends Component {
+  handleLogout = () => {
+    const { dispatch } = this.props
+    dispatch(logOut(this.props.authedUser))
+  }
+
   render(){
     return (
       <nav>
@@ -25,7 +30,7 @@ class Nav extends Component {
           </li>
           <li>
             {this.props.isAuthenticated
-              ? <button>Logout</button>
+              ? <button onClick={this.handleLogout}>Logout</button>
               : null
             }
           </li>
@@ -38,6 +43,7 @@ class Nav extends Component {
 function mapStateToProps ({users, authedUser}) {
   return {
     isAuthenticated: users[authedUser],
+    authedUser,
   }
 }
 
