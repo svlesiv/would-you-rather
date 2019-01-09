@@ -19,28 +19,28 @@ class HomePage extends Component {
 
     return (
       <div>
-        <button onClick={()=>this.handleTabChange(0)}>Answered question</button>
-        <button onClick={()=>this.handleTabChange(1)}>Unanswered question</button>
+        <button onClick={()=>this.handleTabChange(0)}>Unanswered question</button>
+        <button onClick={()=>this.handleTabChange(1)}>Answered question</button>        
 
-          {tabState === 0
-            ? (
-              <ul>
-                {userAnswerIds.map((id)=> (
+        {tabState === 0
+          ? (
+            <ul>
+              {userNotAnswerIds.map((id)=> (
                   <li key={id}>
-                    <PreviewQuestion id={id} statistic />
+                    <PreviewQuestion id={id}/>
                   </li>
                 ))}
-              </ul>
-            )
-            : (
-              <ul>
-                {userNotAnswerIds.map((id)=> (
-                    <li key={id}>
-                      <PreviewQuestion id={id}/>
-                    </li>
-                  ))}
-              </ul>
-            )}
+            </ul>
+          )
+          : (
+            <ul>
+              {userAnswerIds.map((id)=> (
+                <li key={id}>
+                  <PreviewQuestion id={id} statistic />
+                </li>
+              ))}
+            </ul>
+          )}
       </div>
     )
   }
