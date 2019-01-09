@@ -5,11 +5,13 @@ import { logOut } from '../actions/authedUser'
 
 class Nav extends Component {
   handleLogout = () => {
-    const { dispatch } = this.props
-    dispatch(logOut(this.props.authedUser))
+    const { dispatch, authedUser } = this.props
+    dispatch(logOut(authedUser))
   }
 
   render(){
+    const { isAuthenticated, username } = this.props
+
     return (
       <nav>
         <ul>
@@ -28,12 +30,17 @@ class Nav extends Component {
               Leader Board
             </NavLink>
           </li>
-          <li>
-            {this.props.isAuthenticated
-              ? <button onClick={this.handleLogout}>Logout</button>
-              : null
-            }
-          </li>
+          {isAuthenticated
+            ? (<>
+                 <li>
+                   <p>Hello, {username}</p>
+                 </li>
+                 <li>
+                   <button onClick={this.handleLogout}>Logout</button>
+                 </li>
+               </>)
+            : null
+          }
         </ul>
       </nav>
     )
@@ -44,6 +51,7 @@ function mapStateToProps ({users, authedUser}) {
   return {
     isAuthenticated: users[authedUser],
     authedUser,
+    username: users[authedUser].name,
   }
 }
 
