@@ -11,7 +11,10 @@ class PreviewQuestion extends Component {
         <p>{question.author} asks:</p>
         <h1>Would You Rather...</h1>
         <p>...{question.optionOne.text}...</p>
-        <Link to={`/question/${question.id}`}>View Poll </Link>
+        {this.props.statistic
+          ? <Link to={`/statistic/${question.id}`}>View Poll</Link>
+          : <Link to={`/question/${question.id}`}>View Poll</Link>
+        }
       </div>
     )
   }

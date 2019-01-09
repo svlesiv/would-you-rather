@@ -14,7 +14,7 @@ class HomePage extends Component {
         <ul >
           {userAnswerIds.map((id)=> (
             <li key={id}>
-              <PreviewQuestion id={id}/>
+              <PreviewQuestion id={id} statistic />
             </li>
           ))}
         </ul>
@@ -34,15 +34,15 @@ class HomePage extends Component {
 
 function mapStateToProps ({ questions, users, authedUser }) {
   return {
-    questionIds: Object.keys(questions)
-      .sort((a,b) => questions[b].timestamp - questions[a].timestamp),
+    // questionIds: Object.keys(questions)
+    //   .sort((a,b) => questions[b].timestamp - questions[a].timestamp),
 
     userAnswerIds: Object.keys(users[authedUser].answers)
       .sort((a,b) => questions[b].timestamp - questions[a].timestamp),
 
     userNotAnswerIds: Object.keys(questions)
       .filter((id) => Object.keys(users[authedUser].answers).indexOf(id) === -1)
-      .sort((a,b) => questions[b].timestamp - questions[a].timestamp), 
+      .sort((a,b) => questions[b].timestamp - questions[a].timestamp),
   }
 }
 

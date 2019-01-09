@@ -4,12 +4,12 @@ import { connect } from 'react-redux'
 import Nav from './Nav'
 
 const PrivateRoute = ({ component: Component, isAuthenticated, ...rest }) => (
-  <Route {...rest} render={() => (
+  <Route {...rest} render={(props) => (
     isAuthenticated
-      ? (<>
+      ? (<div>
           <Nav />
-          <Component/>
-        </>)
+          <Component {...props}/>
+         </div>)
       : <Redirect to={{
           pathname: '/login'
         }} />

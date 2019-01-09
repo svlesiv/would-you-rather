@@ -9,6 +9,7 @@ import Login from './Login'
 import HomePage from './HomePage'
 import NewQuestion from './NewQuestion'
 import QuestionPage from './QuestionPage'
+import QuestionStatisticPage from './QuestionStatisticPage'
 import LeaderBoard from './LeaderBoard'
 
 class App extends Component {
@@ -26,6 +27,7 @@ class App extends Component {
             <Route path='/login' exact component={Login} />
             <PrivateRoute path='/' exact component={HomePage}/>
             <PrivateRoute path='/new' exact component={NewQuestion}/>
+            <PrivateRoute path='/statistic/:id' exact component={QuestionStatisticPage}/>
             <PrivateRoute path='/question/:id' exact component={QuestionPage}/>
             <PrivateRoute path='/leaders' exact component={LeaderBoard}/>
           </div>
