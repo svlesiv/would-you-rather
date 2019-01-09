@@ -9,6 +9,7 @@ class LeaderBoard extends Component {
         {usersIds.map((user)=>(
           <div key={user}>
             <p>{users[user].name}</p>
+            <img src={users[user].avatarURL}/>
             <p>Answered questions: {Object.keys(users[user].answers).length}</p>
             <p>Created questions: {users[user].questions.length}</p>
           </div>

@@ -15,9 +15,9 @@ class QuestionPage extends Component {
 }
 
 function mapStateToProps ({users, questions}, props) {
-  const { id } = props.match.params
+  const { question_id } = props.match.params
    return {
-    id,
+    id: question_id,
   }
 }
 

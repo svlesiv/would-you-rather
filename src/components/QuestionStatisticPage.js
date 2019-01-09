@@ -15,9 +15,9 @@ class QuestionStatisticPage extends Component {
 }
 
 function mapStateToProps ({users, questions}, props) {
-  const { id } = props.match.params
+  const { statistic_id } = props.match.params
    return {
-    id,
+    id: statistic_id,
   }
 }
 

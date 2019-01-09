@@ -4,12 +4,13 @@ import { formatQuestion, formatDate } from '../utils/helpers'
 
 class Question extends Component {
   render() {
-    const { question } = this.props
-    const { id, author, timestamp, optionOne, optionTwo } = question
+    const { question, user } = this.props
+    const { author, optionOne, optionTwo } = question
 
     return (
       <div>
         <p>{author} asks:</p>
+        <img src={user.avatarURL} />
         <form>
           <h1>Would You Rather...</h1>
 
@@ -32,6 +33,7 @@ class Question extends Component {
 function mapStateToProps ({users, questions}, { id }) {
   const question = questions[id]
    return {
+    user: users[question.author],
     question: question
       ? formatQuestion(question)
       : null

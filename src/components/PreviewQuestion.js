@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom'
 
 class PreviewQuestion extends Component {
   render() {
-    const { question } = this.props
+    const { question, user } = this.props
 
     return (
       <div>
         <p>{question.author} asks:</p>
+        <img src={user.avatarURL} />
         <h1>Would You Rather...</h1>
         <p>...{question.optionOne.text}...</p>
         {this.props.statistic
@@ -24,6 +25,7 @@ function mapStateToProps ({users, questions}, { id }) {
   const question = questions[id]
    return {
     question,
+    user: users[question.author]
   }
 }
 
