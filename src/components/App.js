@@ -11,6 +11,7 @@ import NewQuestion from './NewQuestion'
 import QuestionPage from './QuestionPage'
 import QuestionStatisticPage from './QuestionStatisticPage'
 import LeaderBoard from './LeaderBoard'
+import NotFound from './NotFound'
 
 class App extends Component {
 
@@ -25,8 +26,9 @@ class App extends Component {
         <div>
           <div>
             <Route path='/login' exact component={Login} />
+            <PrivateRoute path='/404' exact component={NotFound} />
             <PrivateRoute path='/' exact component={HomePage}/>
-            <PrivateRoute path='/new' exact component={NewQuestion}/>
+            <PrivateRoute path='/add' exact component={NewQuestion}/>
             <PrivateRoute path='/statistic/:statistic_id' exact component={QuestionStatisticPage}/>
             <PrivateRoute path='/question/:question_id' exact component={QuestionPage}/>
             <PrivateRoute path='/leaders' exact component={LeaderBoard}/>

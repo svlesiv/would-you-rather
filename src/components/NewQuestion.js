@@ -39,7 +39,7 @@ class NewQuestion extends Component {
   }
 
   render() {
-    const { optionOne, optionTwo, toHome } = this.state
+    const { optionOne, optionTwo, toHome } = this.state  
 
      {/* todo: Redirect to / if submitted */}
      if (toHome === true) {
@@ -50,10 +50,10 @@ class NewQuestion extends Component {
       <div>
         <h3>Compose new Question</h3>
         <form onSubmit={this.handleSubmit}>
-          <input type='text' name='optionOne' value={optionOne} onChange={this.handleChangeOne}/>
+          <input type='text' name='optionOne' onChange={this.handleChangeOne}/>
           <label htmlFor='optionOne'>Option One</label>
 
-          <input type='text' name='optionTwo' value={optionTwo} onChange={this.handleChangeTwo}/>
+          <input type='text' name='optionTwo' onChange={this.handleChangeTwo}/>
           <label htmlFor='optionTwo'>Option Two</label>
 
           <button

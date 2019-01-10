@@ -7,8 +7,8 @@ export function formatDate (timestamp) {
 export function formatQuestion (question) {
   const { id, author, timestamp, optionOne, optionTwo } = question
   return {
-    author,
     id,
+    author,  
     timestamp,
     optionOne,
     optionTwo,
