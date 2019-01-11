@@ -15,8 +15,8 @@ export function getInitialData () {
   }))
 }
 
-export function saveQuestion (optionOneText, optionTwoText, author) {
-  return _saveQuestion (optionOneText, optionTwoText, author)
+export function saveQuestion (option) {
+  return _saveQuestion (option)
 }
 
 export function saveVote (vote) {

@@ -147,11 +147,13 @@ function formatQuestion ({ optionOneText, optionTwoText, author }) {
   }
 }
 
-export function _saveQuestion (optionOneText, optionTwoText, author) {
+
+export function _saveQuestion (option) {
   return new Promise((res, rej) => {
-    const formattedQuestion = formatQuestion(optionOneText, optionTwoText, author);
+    const { optionOneText, optionTwoText, author } = option
+    const formattedQuestion = formatQuestion({optionOneText, optionTwoText, author})
     const id = formattedQuestion.id
-    const author = formattedQuestion.author
+    const authedUser = option.author
 
     setTimeout(() => {
       questions = {
@@ -161,9 +163,9 @@ export function _saveQuestion (optionOneText, optionTwoText, author) {
 
       users = {
         ...users,
-        [author]: {
-          ...users[author],
-          questions: [users[author].questions, ...id]
+        [authedUser]: {
+          ...users[authedUser],
+          questions: [users[authedUser][questions], ...id]
         }
       }
 
@@ -171,6 +173,8 @@ export function _saveQuestion (optionOneText, optionTwoText, author) {
     }, 1000)
   })
 }
+
+
 
 export function _saveVote (vote) {
   return new Promise((res, rej) => {

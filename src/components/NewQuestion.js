@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { handleAddQuestion } from '../actions/questions'
+import { handleAddUserQuestion } from '../actions/users'
 
 class NewQuestion extends Component {
   state = {
@@ -30,6 +31,7 @@ class NewQuestion extends Component {
      const { dispatch } = this.props
 
      dispatch(handleAddQuestion(optionOne, optionTwo))
+     dispatch(handleAddUserQuestion())
 
      this.setState(() => ({
        optionOne: '',
@@ -39,7 +41,7 @@ class NewQuestion extends Component {
   }
 
   render() {
-    const { optionOne, optionTwo, toHome } = this.state  
+    const { optionOne, optionTwo, toHome } = this.state
 
      {/* todo: Redirect to / if submitted */}
      if (toHome === true) {
