@@ -35,6 +35,9 @@ class Login extends Component {
 
     return (
       <div>
+        <h1>Welcome to the Would You Rather App</h1>
+        <h2>Please sign in to continue</h2>
+        <h3>Sign in</h3>
         <form onSubmit={this.handleSubmit}>
           <select onChange={this.handleChange}>
             {this.props.userNames.map((user)=>(

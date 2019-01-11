@@ -2,23 +2,29 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { formatQuestion } from '../utils/helpers'
 import { withRouter } from 'react-router-dom'
+import { handleAddVote } from '../actions/questions'
+import { handleAddUserVote } from '../actions/users'
 
 class Question extends Component {
   state = {
-    option: 0,
+    option: 'optionOne',
   }
 
-  handleChange = (num) => {
+  handleChange = (vote) => {
     this.setState({
-      option: num
+      option: vote
     })
   }
 
   handleSubmit = (e) => {
     e.preventDefault()
+    const { dispatch, id } = this.props
+    const { option } = this.state
 
-    //redirect after submission
-    this.props.history.push(`/statistic/${this.props.id}`)
+    dispatch(handleAddVote(option, id))
+    dispatch(handleAddUserVote(option, id))
+
+    this.props.history.push(`/statistic/${id}`)
   }
 
   render() {
@@ -32,10 +38,10 @@ class Question extends Component {
         <form onSubmit={this.handleSubmit}>
           <h1>Would You Rather...</h1>
 
-          <input type="radio" name="question" value="optionOne" defaultChecked onChange={()=>this.handleChange(0)}/>
+          <input type="radio" name="question" value="optionOne" defaultChecked onChange={()=>this.handleChange('optionOne')}/>
           <label htmlFor="optionOne">{optionOne.text}</label>
 
-          <input type="radio" name="question" value="optionTwo" onChange={()=>this.handleChange(1)}/>
+          <input type="radio" name="question" value="optionTwo" onChange={()=>this.handleChange('optionTwo')}/>
           <label htmlFor="optionTwo">{optionTwo.text}</label>
 
           <button type='submit'>

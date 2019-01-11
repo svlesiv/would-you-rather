@@ -171,3 +171,38 @@ export function _saveQuestion (optionOneText, optionTwoText, author) {
     }, 1000)
   })
 }
+
+export function _saveVote (vote) {
+  return new Promise((res, rej) => {
+    const author = vote.author
+    const questionId = vote.questionId
+    const option = vote.vote
+
+    setTimeout(() => {
+
+      users = {
+        ...users,
+        [author]: {
+          ...users[author],
+          answers: {
+            ...users[author].answers,
+            [questionId]: option
+          }
+        }
+      }
+
+      questions = {
+        ...questions,
+        [questionId]: {
+          ...questions[questionId],
+          [option]: {
+            ...questions[questionId][option],
+            votes: [questions[questionId][option].votes, ...author]
+          }
+        }
+      }
+
+      res(vote)
+    }, 500)
+  })
+}

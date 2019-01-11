@@ -2,6 +2,7 @@ import {
   _getUsers,
   _getQuestions,
   _saveQuestion,
+  _saveVote,
 } from './_DATA.js'
 
 export function getInitialData () {
@@ -16,4 +17,8 @@ export function getInitialData () {
 
 export function saveQuestion (optionOneText, optionTwoText, author) {
   return _saveQuestion (optionOneText, optionTwoText, author)
+}
+
+export function saveVote (vote) {
+  return _saveVote (vote)
 }
