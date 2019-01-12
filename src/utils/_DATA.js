@@ -153,7 +153,6 @@ export function _saveQuestion (option) {
     const { optionOneText, optionTwoText, author } = option
     const formattedQuestion = formatQuestion({optionOneText, optionTwoText, author})
     const id = formattedQuestion.id
-    const authedUser = option.author
 
     setTimeout(() => {
       questions = {
@@ -163,18 +162,16 @@ export function _saveQuestion (option) {
 
       users = {
         ...users,
-        [authedUser]: {
-          ...users[authedUser],
-          questions: [users[authedUser][questions], ...id]
+        [author]: {
+          ...users[author],
+          questions: [users[author].questions, ...id]
         }
       }
 
       res(formattedQuestion)
-    }, 1000)
+    }, 1)
   })
 }
-
-
 
 export function _saveVote (vote) {
   return new Promise((res, rej) => {
