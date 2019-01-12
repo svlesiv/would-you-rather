@@ -10,7 +10,7 @@ export default function users (state = {}, action) {
     case ADD_USER_QUESTION :
       const { question } = action
       return {
-        ...state,
+        ...state,        
         [question.author]: {
           ...state[question.author],
           questions: [...state[question.author].questions, question.id]

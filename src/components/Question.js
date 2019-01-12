@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { formatQuestion } from '../utils/helpers'
 import { withRouter } from 'react-router-dom'
-import { handleAddVote } from '../actions/questions'
-import { handleAddUserVote } from '../actions/users'
+import { handleAddVote } from '../actions/shared'
 
 class Question extends Component {
   state = {
@@ -22,8 +21,6 @@ class Question extends Component {
     const { option } = this.state
 
     dispatch(handleAddVote(option, id))
-    dispatch(handleAddUserVote(option, id))
-
     this.props.history.push(`/statistic/${id}`)
   }
 
