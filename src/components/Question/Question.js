@@ -21,7 +21,9 @@ class Question extends Component {
     const { option } = this.state
 
     dispatch(handleAddVote(option, id))
-    this.props.history.push(`/statistic/${id}`)
+    setTimeout(() => {
+      this.props.history.push(`/statistic/${id}`)
+    }, 500)    
   }
 
   render() {
