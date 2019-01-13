@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import PreviewQuestion from './PreviewQuestion'
+import PreviewQuestion from './Question/PreviewQuestion'
 
 class HomePage extends Component {
   state = {

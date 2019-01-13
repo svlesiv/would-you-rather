@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { formatQuestion } from '../utils/helpers'
+import { formatQuestion } from '../../utils/helpers'
 import { withRouter } from 'react-router-dom'
-import { handleAddVote } from '../actions/shared'
+import { handleAddVote } from '../../actions/shared'
 
 class Question extends Component {
   state = {

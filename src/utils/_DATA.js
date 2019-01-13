@@ -204,6 +204,6 @@ export function _saveVote (vote) {
       }
 
       res(vote)
-    }, 1000)
+    }, 500)
   })
 }
