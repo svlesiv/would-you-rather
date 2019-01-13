@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { logIn } from '../actions/authedUser'
-import { Redirect } from 'react-router-dom'
+import { Redirect, withRouter } from 'react-router-dom'
 
 class Login extends Component {
   state = {
     username: '',
-    toHome: false,
+    redirect: this.props.isAuthenticated
   }
 
   handleChange = (e) => {
@@ -22,14 +22,15 @@ class Login extends Component {
     dispatch(logIn(this.state.username))
 
     this.setState(() => ({
-     toHome: true,
+     redirect: true,
    }))
   }
 
   render() {
+    const { from } = this.props.location.state || { from: { pathname: '/' } }
 
-    if (this.state.toHome === true) {
-      return <Redirect to='/' />
+    if (this.state.redirect === true) {
+      return <Redirect to={from} />
     }
 
     return (
@@ -55,7 +56,8 @@ function mapStateToProps ({users, authedUser}) {
   return {
     userNames: Object.keys(users),
     username: authedUser,
+    isAuthenticated: users[authedUser],
   }
 }
 
-export default connect(mapStateToProps)(Login)
+export default withRouter(connect(mapStateToProps)(Login))
