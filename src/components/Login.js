@@ -40,6 +40,7 @@ class Login extends Component {
         <h3>Sign in</h3>
         <form onSubmit={this.handleSubmit}>
           <select onChange={this.handleChange}>
+            <option defaultValue = ''>-- select your username -- </option>
             {this.props.userNames.map((user)=>(
               <option value={user} key={user}>{user}</option>
               ))}
