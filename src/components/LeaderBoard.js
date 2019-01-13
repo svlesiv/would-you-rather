@@ -3,13 +3,13 @@ import { connect } from 'react-redux'
 
 class LeaderBoard extends Component {
   render() {
-    const { users, usersIds,sum, sortedIds } = this.props
+    const { users, sortedIds } = this.props
     return (
       <div>
         {sortedIds.map((user)=>(
           <div key={user}>
             <p>{users[user].name}</p>
-            <img src={users[user].avatarURL}/>
+            <img src={users[user].avatarURL} alt={users[user].name}/>
             <p>Answered questions: {Object.keys(users[user].answers).length}</p>
             <p>Created questions: {users[user].questions.length}</p>
           </div>

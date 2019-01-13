@@ -28,8 +28,7 @@ class Login extends Component {
 
   render() {
 
-    {/* Redirect to Home if submitted */}
-     if (this.state.toHome === true) {
+    if (this.state.toHome === true) {
       return <Redirect to='/' />
     }
 

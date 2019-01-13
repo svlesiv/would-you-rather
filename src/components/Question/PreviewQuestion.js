@@ -9,7 +9,7 @@ class PreviewQuestion extends Component {
     return (
       <div>
         <p>{question.author} asks:</p>
-        <img src={user.avatarURL} />
+        <img src={user.avatarURL} alt={user.name}/>
         <h1>Would You Rather...</h1>
         <p>...{question.optionOne.text}...</p>
         {this.props.statistic

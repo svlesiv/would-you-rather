@@ -16,7 +16,7 @@ class QuestionStatistic extends Component {
     return (
       <div>
         <p>Asked by {author}</p>
-        <img src={user.avatarURL} />
+        <img src={user.avatarURL} alt={user.name}/>
         <h3>Results</h3>
         <h4>{optionOne.text}</h4>
         <p>{numVotes1} out of {sum}</p>

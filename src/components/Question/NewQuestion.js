@@ -41,7 +41,6 @@ class NewQuestion extends Component {
   render() {
     const { optionOne, optionTwo, toHome } = this.state
 
-     {/* todo: Redirect to / if submitted */}
      if (toHome === true) {
       return <Redirect to='/' />
     }

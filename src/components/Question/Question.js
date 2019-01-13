@@ -23,7 +23,7 @@ class Question extends Component {
     dispatch(handleAddVote(option, id))
     setTimeout(() => {
       this.props.history.push(`/statistic/${id}`)
-    }, 500)    
+    }, 500)
   }
 
   render() {
@@ -33,7 +33,7 @@ class Question extends Component {
     return (
       <div>
         <p>{author} asks:</p>
-        <img src={user.avatarURL} />
+        <img src={user.avatarURL} alt={user.name}/>
         <form onSubmit={this.handleSubmit}>
           <h1>Would You Rather...</h1>
 
