@@ -169,7 +169,7 @@ export function _saveQuestion (option) {
       }
 
       res(formattedQuestion)
-    }, 1)
+    }, 1000)
   })
 }
 
@@ -204,6 +204,6 @@ export function _saveVote (vote) {
       }
 
       res(vote)
-    }, 500)
+    }, 1000)
   })
 }

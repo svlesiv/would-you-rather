@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { handleInitialData } from '../actions/shared'
+import LoadingBar from 'react-redux-loading-bar'
 
 import PrivateRoute from './PrivateRoute'
 // import Nav from './Nav'
@@ -24,6 +25,7 @@ class App extends Component {
     return (
       <Router>
         <div>
+          <LoadingBar />
           <div>
             <Route path='/login' exact component={Login} />
             <PrivateRoute path='/404' exact component={NotFound} />
@@ -31,7 +33,7 @@ class App extends Component {
             <PrivateRoute path='/add' exact component={NewQuestion}/>
             <PrivateRoute path='/statistic/:statistic_id' exact component={QuestionStatisticPage}/>
             <PrivateRoute path='/question/:question_id' exact component={QuestionPage}/>
-            <PrivateRoute path='/leaders' exact component={LeaderBoard}/>
+            <PrivateRoute path='/leaderboard' exact component={LeaderBoard}/>
           </div>
         </div>
       </Router>

@@ -20,7 +20,7 @@ class HomePage extends Component {
     return (
       <div>
         <button onClick={()=>this.handleTabChange(0)}>Unanswered question</button>
-        <button onClick={()=>this.handleTabChange(1)}>Answered question</button>        
+        <button onClick={()=>this.handleTabChange(1)}>Answered question</button>
 
         {tabState === 0
           ? (
