@@ -1,10 +1,7 @@
 import React, {Component} from 'react'
-import { Redirect, Route, withRouter } from 'react-router-dom'
+import { Redirect, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Nav from './Nav'
-import NotFound from './NotFound'
-
-
 
 class  PrivateRoute extends Component {
   render(){
@@ -31,4 +28,4 @@ function mapStateToProps({users, authedUser}) {
   }
 }
 
-export default withRouter(connect(mapStateToProps, null, null, {pure: false})(PrivateRoute))
+export default connect(mapStateToProps)(PrivateRoute)
