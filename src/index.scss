@@ -14,9 +14,7 @@
 	--h2-line-height: 1.25em;
 
 	--h3-font-size: 1.4em;
-	--h3-line-height: 1.25em;
-
-  --nav-font-size: 1.3em;
+	--h3-line-height: 1.25em;  
 }
 
 html {
@@ -58,10 +56,6 @@ h3 {
   line-height: var(--h3-line-height);
 }
 
-nav {
-  font-size: var(--nav-font-size);
-}
-
 @media (max-width: 1201px){
 	:root{
 		--h1-font-size: 2.2em;
@@ -71,7 +65,6 @@ nav {
 		--h2-line-height: 1.25em;
 		--h3-font-size: 1.2em;
 		--h3-line-height: 1.25em;
-    --nav-font-size: 1.2em;
 	}
 }
 
@@ -85,7 +78,6 @@ nav {
 		--h2-line-height: 1.1em;
 		--h3-font-size: 1.2em;
 		--h3-line-height: 1.1em;
-    --nav-font-size: 1.1em;
 	}
 }
 
@@ -119,7 +111,7 @@ main > * {
 		grid-template-areas: "header"
 							            "main";
 		grid-template-columns: 1fr;
-		grid-template-rows: 12vh 2fr;
+		grid-template-rows: minmax(12vh, auto) 2fr;
 	}
 
 	header  {grid-area: header;}

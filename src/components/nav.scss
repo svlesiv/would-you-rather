@@ -18,8 +18,9 @@
 
 /*nav general styles---------------*/
 nav {
-	font-size: var(--nav-font-size);
+	font-size: var(--base-font-size);
   font-family: $font-family-body;
+	border-bottom: 1px $accent-color solid;
 	padding: {
 		top: 1em;
 		bottom: 1em;
@@ -37,6 +38,7 @@ nav {
 	}
   li > p {
     color: darken($accent-color, 35);
+		white-space: nowrap;
   }
   .active {
       color:$accent-color;
@@ -57,15 +59,40 @@ nav {
 	}
 
   li > button {
+		float: right;
     border: none;
     background-color: transparent;
     font-size: var(--base-font-size);
     font-family: $font-family-body;
 		padding: 0;
+		margin-left: 0;
 		&:active, &:hover, &:focus {
 			color: $accent-color;
 			border-color: none;
 			box-shadow: none;
 		}
   }
+}
+
+
+@media (max-width: 701px)  {
+	header {
+		justify-self: start;
+	}
+	nav {
+		border: none;
+		li {
+			display:  block;
+			button {
+				float: left;
+			}
+		}
+	}
+}
+
+@media (max-width: 790px) {
+	nav li button {
+		float: left;
+		padding-right: 6vw;		
+	}
 }
