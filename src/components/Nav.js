@@ -18,17 +18,17 @@ class Nav extends Component {
       <nav className='nav'>
         <ul>
           <li>
-            <NavLink to='/' exact activeClassName='active' onlyActiveOnIndex>
+            <NavLink to='/' exact activeClassName='active'>
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to='/add' activeClassName='active' onlyActiveOnIndex>
+            <NavLink to='/add' activeClassName='active'>
               New Question
             </NavLink>
           </li>
           <li>
-            <NavLink to='/leaderboard' activeClassName='active' onlyActiveOnIndex>
+            <NavLink to='/leaderboard' activeClassName='active'>
               Leader Board
             </NavLink>
           </li>

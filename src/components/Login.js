@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './login.scss'
 import { connect } from 'react-redux'
 import { logIn } from '../actions/authedUser'
 import { Redirect, withRouter } from 'react-router-dom'
@@ -28,25 +29,30 @@ class Login extends Component {
 
   render() {
     const { from } = this.props.location.state || { from: { pathname: '/' } }
+    const { redirect, username } = this.state
+    const { userNames } = this.props
 
-    if (this.state.redirect === true) {
+    if (redirect === true) {
       return <Redirect to={from} />
     }
 
     return (
       <div>
-        <h1>Welcome to the Would You Rather App</h1>
-        <h2>Please sign in to continue</h2>
-        <h3>Sign in</h3>
-        <form onSubmit={this.handleSubmit}>
-          <select onChange={this.handleChange}>
-            <option defaultValue = ''>-- select your username -- </option>
-            {this.props.userNames.map((user)=>(
-              <option value={user} key={user}>{user}</option>
-              ))}
-          </select>
-          <button type='submit' disabled={this.state.username===''}>Sign in</button>
-        </form>
+        <header>
+          <h1>Welcome to the Would You Rather App</h1>          
+        </header>
+        <main>
+          <form onSubmit={this.handleSubmit}>
+            <legend>Please sign in to continue</legend>
+            <select onChange={this.handleChange}>
+              <option defaultValue = ''>-- select your username -- </option>
+              {userNames.map((user)=>(
+                <option value={user} key={user}>{user}</option>
+                ))}
+            </select>
+            <button type='submit' disabled={username===''}>Sign in</button>
+          </form>
+        </main>
       </div>
     )
   }

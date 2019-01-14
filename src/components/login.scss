@@ -1,0 +1,33 @@
+@import "../variables";
+@import "./button";
+
+h1 {
+  font-size: var(--h2-font-size);
+}
+
+/*form----------------------------------*/
+form {
+	width: 40vw;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+legend {
+	color: $accent-color;
+  font-size: var(--h3-font-size);
+}
+
+select {
+	font-family: $font-family-body;
+	display: block;
+	margin-bottom: 4vh;
+  margin-top: 5vh;
+	width: 17em;
+	border: none;
+	border-bottom: 1px solid #bff698;
+	background-color: $base-color;
+	color: darken($text-color, 5);
+  option {
+  	color: darken($text-color, 30);
+  }
+}
