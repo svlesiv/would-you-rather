@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './nav.scss'
 import { connect } from 'react-redux'
-import { NavLink } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 import { logOut } from '../actions/authedUser'
 
 
@@ -18,17 +18,17 @@ class Nav extends Component {
       <nav className='nav'>
         <ul>
           <li>
-            <NavLink to='/' exact activeClassName='active'>
+            <NavLink to='/' exact activeClassName='active' onlyActiveOnIndex>
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to='/add' activeClassName='active'>
+            <NavLink to='/add' activeClassName='active' onlyActiveOnIndex>
               New Question
             </NavLink>
           </li>
           <li>
-            <NavLink to='/leaderboard' activeClassName='active'>
+            <NavLink to='/leaderboard' activeClassName='active' onlyActiveOnIndex>
               Leader Board
             </NavLink>
           </li>
@@ -57,4 +57,4 @@ function mapStateToProps ({users, authedUser}) {
   }
 }
 
-export default connect(mapStateToProps)(Nav)
+export default withRouter(connect(mapStateToProps)(Nav))

@@ -10,8 +10,12 @@ class  PrivateRoute extends Component {
       <Route {...rest} render={(props) => (
         isAuthenticated
           ? (<div>
-              <Nav />
-              <Component {...props}/>
+              <header>
+                <Nav />
+              </header>
+              <main>
+                <Component {...props}/>
+              </main>
              </div>)
           : <Redirect to={{
               pathname: '/login',

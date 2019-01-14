@@ -19,7 +19,6 @@
 /*nav general styles---------------*/
 nav {
 	font-size: $font-size-nav;
-	font-weight: bold;
   font-family: $font-family-body;
 	padding: {
 		top: 1em;
@@ -37,7 +36,7 @@ nav {
 		padding-right: 3em;
 	}
   li > p {
-    color: darken($accent-color, 7);
+    color: darken($accent-color, 35);
   }
   .active {
       color:$accent-color;
@@ -61,7 +60,6 @@ nav {
     border: none;
     background-color: transparent;
     font-size: $font-size-body;
-    font-weight: bold;
     font-family: $font-family-body;
   }
 }
