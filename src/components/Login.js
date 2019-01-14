@@ -37,9 +37,9 @@ class Login extends Component {
     }
 
     return (
-      <div>
+      <div className='gridWrapper'>
         <header>
-          <h1>Welcome to the Would You Rather App</h1>          
+          <h1>Welcome to the Would You Rather App</h1>
         </header>
         <main>
           <form onSubmit={this.handleSubmit}>

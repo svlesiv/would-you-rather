@@ -9,7 +9,7 @@ class  PrivateRoute extends Component {
     return (
       <Route {...rest} render={(props) => (
         isAuthenticated
-          ? (<div>
+          ? (<div className='gridWrapper'>
               <header>
                 <Nav />
               </header>
