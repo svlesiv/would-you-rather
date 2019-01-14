@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
+import './nav.scss'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { logOut } from '../actions/authedUser'
+
 
 class Nav extends Component {
   handleLogout = () => {
@@ -13,7 +15,7 @@ class Nav extends Component {
     const { isAuthenticated, username } = this.props
 
     return (
-      <nav>
+      <nav className='nav'>
         <ul>
           <li>
             <NavLink to='/' exact activeClassName='active'>

@@ -1,0 +1,67 @@
+@import "../variables";
+
+/*extends*/
+%link-transition{
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0%;
+		transition: width 0.4s;
+	}
+	&:hover:after {
+		width: 100%;
+	}
+}
+
+/*nav general styles---------------*/
+nav {
+	font-size: $font-size-nav;
+	font-weight: bold;
+  font-family: $font-family-body;
+	padding: {
+		top: 1em;
+		bottom: 1em;
+	}
+
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+		text-align: left;
+	}
+	li, li > p {
+		display: inline;
+		padding-right: 3em;
+	}
+  li > p {
+    color: darken($accent-color, 7);
+  }
+  .active {
+      color:$accent-color;
+  }
+	a, li > button {
+    @extend %link-transition;
+  	&:after {
+  		border-bottom: 2px solid darken($accent-color, 7);
+  	}
+		display: inline-block;
+		text-decoration: none;
+    cursor: pointer;
+		color: $header-text-color;
+	  	position: relative;
+	  	&:hover {
+		    color: $accent-color;
+		}
+	}
+
+  li > button {
+    border: none;
+    background-color: transparent;
+    font-size: $font-size-body;
+    font-weight: bold;
+    font-family: $font-family-body;
+  }
+}
