@@ -30,7 +30,7 @@ button[disabled] {
 	background-color: lighten($base-color, 7);
 	border: 1px grey solid;
 	color: lighten($base-color, 50);
-	width: 45%;
+	width: calc(50% - 1em);
 }
 
 .active-ans {
@@ -45,6 +45,6 @@ button[disabled] {
 	}
 
 	.active-ans {
-		width: 45%;
+		width: calc(50% - 1em);
 	}
 }

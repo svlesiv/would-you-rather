@@ -6,6 +6,9 @@ img {
   max-width: 100px;
   max-height: 100px;
 }
+.img-q {
+  margin-top: 0;
+}
 
 section {
   width: 50vw;
@@ -26,9 +29,26 @@ section {
       border-bottom: 1px $accent-complementary-color solid;
       padding-bottom: 3em;
   }
-
 }
 
 .content-q {
   display: flex;
+}
+
+label {
+  display: block;
+  cursor: pointer;
+  &:nth-of-type(1) {
+    padding-top: 3vh;
+  }
+  &:last-of-type {
+    padding-bottom: 4vh;
+  }
+  input[type='radio'] {
+    margin-right: 1vw;
+  }  
+}
+
+.poll-form {
+  padding-bottom: 5vh;
 }

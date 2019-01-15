@@ -122,7 +122,7 @@ main > * {
     border-color: adjust-hue($accent-color, 45deg);
     box-shadow:0 0 0.3em adjust-hue($accent-color, 45deg);
     border-radius: 5px;
-    padding: 3em;
+    padding: 1em 3em;
   }
 }
 

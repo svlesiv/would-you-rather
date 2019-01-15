@@ -32,21 +32,26 @@ class Question extends Component {
 
     return (
       <div>
-        <p>{author} asks:</p>
-        <img src={user.avatarURL} alt={user.name}/>
-        <form onSubmit={this.handleSubmit}>
-          <h1>Would You Rather...</h1>
+        <h1 className='accent-text'>{user.name} asks:</h1>
+        <div className='content-q'>
+          <img className='img-q' src={user.avatarURL} alt={user.name}/>
+          <form onSubmit={this.handleSubmit} className='poll-form'>
+            <legend>Would You Rather...</legend>
+            <label>
+              <input type="radio" name="question" value="optionOne" defaultChecked
+                     onChange={()=>this.handleChange('optionOne')}/>
+              {optionOne.text}
+            </label>
 
-          <input type="radio" name="question" value="optionOne" defaultChecked onChange={()=>this.handleChange('optionOne')}/>
-          <label htmlFor="optionOne">{optionOne.text}</label>
+            <label>
+              <input type="radio" name="question" value="optionTwo"
+                     onChange={()=>this.handleChange('optionTwo')}/>
+              {optionTwo.text}
+            </label>
 
-          <input type="radio" name="question" value="optionTwo" onChange={()=>this.handleChange('optionTwo')}/>
-          <label htmlFor="optionTwo">{optionTwo.text}</label>
-
-          <button type='submit'>
-                Submit
-          </button>
-        </form>
+            <button type='submit'>Submit</button>
+          </form>
+        </div>
       </div>
     )
   }
