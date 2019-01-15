@@ -47,17 +47,16 @@ class NewQuestion extends Component {
 
      return (
       <div>
-        <h3>Compose new Question</h3>
-        <form onSubmit={this.handleSubmit}>
-          <input type='text' name='optionOne' onChange={this.handleChangeOne}/>
+        <form onSubmit={this.handleSubmit} className='new-q-form'>
+          <legend>Compose a new Question</legend>
+
           <label htmlFor='optionOne'>Option One</label>
+          <input type='text' id='optionOne' name='optionOne' onChange={this.handleChangeOne}/>
 
-          <input type='text' name='optionTwo' onChange={this.handleChangeTwo}/>
           <label htmlFor='optionTwo'>Option Two</label>
+          <input type='text' id='optionTwo' name='optionTwo' onChange={this.handleChangeTwo}/>
 
-          <button
-            type='submit'
-            disabled={optionOne === '' || optionTwo === '' }>
+          <button type='submit' disabled={optionOne === '' || optionTwo === '' }>
               Submit
           </button>
         </form>

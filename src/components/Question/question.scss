@@ -35,20 +35,39 @@ section {
   display: flex;
 }
 
-label {
-  display: block;
-  cursor: pointer;
-  &:nth-of-type(1) {
-    padding-top: 3vh;
-  }
-  &:last-of-type {
-    padding-bottom: 4vh;
-  }
-  input[type='radio'] {
-    margin-right: 1vw;
-  }  
-}
-
 .poll-form {
   padding-bottom: 5vh;
+  label {
+    display: block;
+    cursor: pointer;
+    &:nth-of-type(1) {
+      padding-top: 3vh;
+    }
+    &:last-of-type {
+      padding-bottom: 4vh;
+    }
+    input[type='radio'] {
+      margin-right: 1vw;
+    }
+  }
+}
+
+.new-q-form {
+  padding: 3vh 0;
+  label {
+    color: $accent-complementary-color;
+    display: block;
+    margin: 0;
+    padding: 0;
+    margin-top: 5vh;
+  }
+  input {
+    margin: 0;
+    padding: 0;
+    display: block;
+    color: $text-color;
+  }
+  button {
+    margin-top: 5vh;
+  }
 }

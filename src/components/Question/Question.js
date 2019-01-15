@@ -38,13 +38,13 @@ class Question extends Component {
           <form onSubmit={this.handleSubmit} className='poll-form'>
             <legend>Would You Rather...</legend>
             <label>
-              <input type="radio" name="question" value="optionOne" defaultChecked
+              <input type='radio' name='question' value='optionOne' defaultChecked
                      onChange={()=>this.handleChange('optionOne')}/>
               {optionOne.text}
             </label>
 
             <label>
-              <input type="radio" name="question" value="optionTwo"
+              <input type='radio' name='question' value='optionTwo'
                      onChange={()=>this.handleChange('optionTwo')}/>
               {optionTwo.text}
             </label>
