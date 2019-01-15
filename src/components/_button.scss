@@ -8,7 +8,8 @@ button {
 	padding: 0.6em 1.2em;
 	cursor:pointer;
 	transition:all 0.3s ease;
-	&:active, &:hover, &:focus {
+	&:active, &:hover {
+		background-color: $base-color;
 		color: $text-color;
     border-color: adjust-hue($accent-color, 45deg);
 		box-shadow:0 0 0.8em adjust-hue($accent-color, 45deg);
@@ -21,5 +22,29 @@ button[disabled] {
 		color: none;
     border-color: none;
 		box-shadow: none;
+		cursor: context-menu;
   }
+}
+
+.not-active {
+	background-color: lighten($base-color, 7);
+	border: 1px grey solid;
+	color: lighten($base-color, 50);
+	width: 45%;
+}
+
+.active-ans {
+	background-color: $accent-color;
+	color: $base-color;
+	width: 50%;
+}
+
+.answered {
+	.not-active {
+		width: 50%;
+	}
+
+	.active-ans {
+		width: 45%;
+	}
 }

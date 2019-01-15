@@ -37,7 +37,7 @@ nav {
 		padding-right: 3em;
 	}
   li > p {
-    color: darken($accent-color, 35);
+    color: lighten($base-color, 50);
 		white-space: nowrap;
   }
   .active {
@@ -93,6 +93,6 @@ nav {
 @media (max-width: 790px) {
 	nav li button {
 		float: left;
-		padding-right: 6vw;		
+		padding-right: 6vw;
 	}
 }

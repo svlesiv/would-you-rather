@@ -1,0 +1,34 @@
+@import "../../variables";
+
+img {
+  margin: 2em;
+  margin-left: 0;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+section {
+  width: 50vw;
+  a {
+    color: $accent-color;
+    &:link,
+    &:visited{
+    	text-decoration: underline;
+      color: lighten($accent-color, 5);
+    }
+    &:hover,
+    &:active {
+    	text-decoration: none;
+      color: darken($accent-color, 7);
+    }
+  }
+  &:not(:last-of-type) {
+      border-bottom: 1px $accent-complementary-color solid;
+      padding-bottom: 3em;
+  }
+
+}
+
+.content-q {
+  display: flex;
+}

@@ -14,7 +14,7 @@
 	--h2-line-height: 1.25em;
 
 	--h3-font-size: 1.4em;
-	--h3-line-height: 1.25em;  
+	--h3-line-height: 1.25em;
 }
 
 html {
@@ -116,4 +116,16 @@ main > * {
 
 	header  {grid-area: header;}
 	main    {grid-area: main;}
+
+  main {
+    background-color: lighten($base-color, 2);
+    border-color: adjust-hue($accent-color, 45deg);
+    box-shadow:0 0 0.3em adjust-hue($accent-color, 45deg);
+    border-radius: 5px;
+    padding: 3em;
+  }
+}
+
+.accent-text {
+	color: $accent-complementary-color;
 }

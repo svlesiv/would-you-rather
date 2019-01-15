@@ -38,7 +38,7 @@ class Login extends Component {
 
     return (
       <div className='gridWrapper'>
-        <header>
+        <header className='loginHeader'>
           <h1>Welcome to the Would You Rather App</h1>
         </header>
         <main>

@@ -21,9 +21,16 @@ select {
 	width: 17em;
 	border: none;
 	border-bottom: 1px solid #bff698;
-	background-color: $base-color;
+	background-color: lighten($base-color, 2);
 	color: darken($text-color, 5);
   option {
   	color: darken($text-color, 30);
+
   }
+}
+
+@media (max-width: 701px)  {
+	.loginHeader {
+		justify-self: center;
+	}
 }
