@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 class PreviewQuestion extends Component {
   render() {
-    const { question, user, users } = this.props
+    const { question, user} = this.props
 
     return (
       <section>
@@ -29,8 +29,7 @@ function mapStateToProps ({users, questions}, { id }) {
   const question = questions[id]
    return {
     question,
-    user: users[question.author],
-    users,
+    user: users[question.author],    
   }
 }
 

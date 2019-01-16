@@ -37,7 +37,7 @@ function mapStateToProps ({users}) {
    }
 
    function storeKeys (myArray, myMap) {
-     for (let [key, value] of myMap) {
+     for (let [key] of myMap) {
        myArray.push(key)
      }
    }
@@ -47,7 +47,7 @@ function mapStateToProps ({users}) {
 
    //populate map
    Object.keys(users).map((user)=>{
-     sumMap.set(user, (Object.keys(users[user].answers).length)
+     return sumMap.set(user, (Object.keys(users[user].answers).length)
                       + (Object.keys(users[user].questions).length))
    })
 

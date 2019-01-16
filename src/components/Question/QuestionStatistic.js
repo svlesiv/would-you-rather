@@ -9,11 +9,10 @@ class QuestionStatistic extends Component {
 
   render() {
     const { question, user } = this.props
-    const { author, optionOne, optionTwo } = question
+    const { optionOne, optionTwo } = question
     const numVotes1 = optionOne.votes.length
     const numVotes2 = optionTwo.votes.length
-    const sum  = numVotes1 + numVotes2
-    const num = this.calculatePercentage(numVotes1, numVotes2)
+    const sum  = numVotes1 + numVotes2    
 
     return (
       <article>
