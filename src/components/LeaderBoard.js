@@ -5,23 +5,29 @@ class LeaderBoard extends Component {
   render() {
     const { users, sortedIds } = this.props
     return (
-      <div>
+      <article className='leaders'>
         {sortedIds.map((user)=>(
-          <div key={user}>
-            <p>{users[user].name}</p>
-            <img src={users[user].avatarURL} alt={users[user].name}/>
-            <p>Answered questions: {Object.keys(users[user].answers).length}</p>
-            <p>Created questions: {users[user].questions.length}</p>
-          </div>
-        )) }
-      </div>
+          <section key={user}>
+            <h1 className='accent-text'>{users[user].name}</h1>
+            <div className='flex-container'>
+              <img src={users[user].avatarURL} alt={users[user].name}/>
+              <div>
+                <p>Answered questions:
+                  <strong> {Object.keys(users[user].answers).length}</strong>
+                </p>
+                <p>Created questions:
+                  <strong> {users[user].questions.length}</strong>
+                </p>
+              </div>
+            </div>
+          </section>
+        ))}
+      </article>
     )
   }
 }
 
 function mapStateToProps ({users}) {
-   //maybe better to have array with two values, something like tuples...
-
    //https://stackoverflow.com/questions/37982476/how-to-sort-a-map-by-value-in-javascript
    //sort first alphabetically and then by values
    function sortMapByValue(myMap) {

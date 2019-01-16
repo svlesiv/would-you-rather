@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './login.scss'
 import { connect } from 'react-redux'
 import { logIn } from '../actions/authedUser'
 import { Redirect, withRouter } from 'react-router-dom'
@@ -42,7 +41,7 @@ class Login extends Component {
           <h1>Welcome to the Would You Rather App</h1>
         </header>
         <main>
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit} className='login-form'>
             <legend>Please sign in to continue</legend>
             <select onChange={this.handleChange}>
               <option defaultValue = ''>-- select your username -- </option>

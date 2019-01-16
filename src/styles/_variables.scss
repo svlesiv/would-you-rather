@@ -1,3 +1,4 @@
+/*colors*/
 $base-color: rgba(15, 15, 15, 1);
 $accent-color: hsl(95, 84%, 78%);
 $accent-complementary-color: complement($accent-color);
@@ -7,7 +8,6 @@ $text-color: rgba(245, 245, 245, 1);
 $font-family-header:"Playfair Display", serif;
 $font-family-body:"Raleway", Arial, Helvetica, sans-serif;
 $font-size-body: 1em;
-$font-size-nav: 1.3em;
 
 /*other*/
 $border: 1px solid $accent-complementary-color;

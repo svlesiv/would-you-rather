@@ -33,8 +33,8 @@ class Question extends Component {
     return (
       <div>
         <h1 className='accent-text'>{user.name} asks:</h1>
-        <div className='content-q'>
-          <img className='img-q' src={user.avatarURL} alt={user.name}/>
+        <div className='flex-container'>
+          <img src={user.avatarURL} alt={user.name}/>
           <form onSubmit={this.handleSubmit} className='poll-form'>
             <legend>Would You Rather...</legend>
             <label>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './nav.scss'
 import { connect } from 'react-redux'
 import { NavLink, withRouter } from 'react-router-dom'
 import { logOut } from '../actions/authedUser'
