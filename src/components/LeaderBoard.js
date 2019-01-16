@@ -8,7 +8,7 @@ class LeaderBoard extends Component {
       <article className='leaders'>
         {sortedIds.map((user)=>(
           <section key={user}>
-            <h1 className='accent-text'>{users[user].name}</h1>
+            <h1 className='compl-accent-text'>{users[user].name}</h1>
             <div className='flex-container'>
               <img src={users[user].avatarURL} alt={users[user].name}/>
               <div>

@@ -8,7 +8,7 @@ class PreviewQuestion extends Component {
 
     return (
       <section>
-        <h1 className='accent-text'>{user.name} asks:</h1>
+        <h1 className='compl-accent-text'>{user.name} asks:</h1>
         <div className='flex-container'>
           <img src={user.avatarURL} alt={user.name} className='img-preview'/>
           <div>
