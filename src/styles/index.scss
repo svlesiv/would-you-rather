@@ -203,11 +203,22 @@ section {
   }
 }
 
-.poll-res-section {	
-  &:not(:last-of-type) {
+.poll-res-section {
+	section:not(:last-of-type) {
 		padding-bottom: 1em;
+		border: none;
+	}
+	section {
+		padding-left: 3vw;
 	}
 }
+.highlightPoll {
+	padding: 1vh 3vw;
+	box-shadow: 0 0 0.3em adjust-hue($accent-complementary-color, 45deg);
+	border-radius: 5px;
+	background-color: lighten($base-color, 7);
+}
+
 
 /*forms------------------------*/
 

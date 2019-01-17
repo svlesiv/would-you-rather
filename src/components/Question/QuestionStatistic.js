@@ -13,7 +13,7 @@ class QuestionStatistic extends Component {
   }
 
   render() {
-    const { question, user } = this.props;
+    const { question, user, authedUser, users } = this.props;
     const { optionOne, optionTwo } = question;
     const numVotes1 = optionOne.votes.length;
     const numVotes2 = optionTwo.votes.length;
@@ -24,14 +24,14 @@ class QuestionStatistic extends Component {
         <h1 className='compl-accent-text'>Asked by {user.name}</h1>
         <div className='flex-container'>
           <img src={user.avatarURL} alt={user.name}/>
-          <div>
+          <div className='poll-res-section'>
             <h2 className='accent-text'>Results</h2>
-            <section className='poll-res-section'>
+            <section className={users[authedUser].answers[question.id]==='optionOne' ? 'highlightPoll' : ''}>
               <h3>{optionOne.text}</h3>
               <p>{this.calculatePercentage(numVotes1, numVotes2)}%</p>
               <p>{numVotes1} out of {sum} votes</p>
             </section>
-            <section>
+            <section className={users[authedUser].answers[question.id]==='optionTwo' ? 'highlightPoll' : ''}>
               <h3>{optionTwo.text}</h3>
               <p>{this.calculatePercentage(numVotes2, numVotes1)}%</p>
               <p>{numVotes2} out of {sum} votes</p>
@@ -43,12 +43,14 @@ class QuestionStatistic extends Component {
   }
 }
 
-function mapStateToProps ({ questions, users }, { id }) {
+function mapStateToProps ({ questions, users, authedUser }, { id }) {
   const question = questions[id];
   return {
     question,
-    user: users[question.author]
-  }
+    user: users[question.author],
+    authedUser,
+    users,
+  };
 }
 
 export default connect(mapStateToProps)(QuestionStatistic);
