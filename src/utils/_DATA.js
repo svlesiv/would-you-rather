@@ -118,17 +118,17 @@ let questions = {
 export function _getUsers () {
   return new Promise((res, rej) => {
     setTimeout(() => res({...users}), 1000)
-  })
+  });
 }
 
 export function _getQuestions () {
   return new Promise((res, rej) => {
     setTimeout(() => res({...questions}), 1000)
-  })
+  });
 }
 
 function generateUID () {
-  return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
+  return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 }
 
 function formatQuestion ({ optionOneText, optionTwoText, author }) {
@@ -144,40 +144,40 @@ function formatQuestion ({ optionOneText, optionTwoText, author }) {
       votes: [],
       text: optionTwoText,
     }
-  }
+  };
 }
 
 
 export function _saveQuestion (option) {
   return new Promise((res, rej) => {
-    const { optionOneText, optionTwoText, author } = option
-    const formattedQuestion = formatQuestion({optionOneText, optionTwoText, author})
-    const id = formattedQuestion.id
+    const { optionOneText, optionTwoText, author } = option;
+    const formattedQuestion = formatQuestion({optionOneText, optionTwoText, author});
+    const id = formattedQuestion.id;
 
     setTimeout(() => {
       questions = {
         ...questions,
         [id]: formattedQuestion
-      }
+      };
 
       users = {
         ...users,
         [author]: {
           ...users[author],
           questions: [users[author].questions, ...id]
-        }
-      }
+        },
+      };
 
-      res(formattedQuestion)
-    }, 1000)
-  })
+      res(formattedQuestion);
+    }, 1000);
+  });
 }
 
 export function _saveVote (vote) {
   return new Promise((res, rej) => {
-    const author = vote.author
-    const questionId = vote.questionId
-    const option = vote.vote
+    const author = vote.author;
+    const questionId = vote.questionId;
+    const option = vote.vote;
 
     setTimeout(() => {
 
@@ -188,9 +188,9 @@ export function _saveVote (vote) {
           answers: {
             ...users[author].answers,
             [questionId]: option
-          }
-        }
-      }
+          },
+        },
+      };
 
       questions = {
         ...questions,
@@ -199,11 +199,11 @@ export function _saveVote (vote) {
           [option]: {
             ...questions[questionId][option],
             votes: [questions[questionId][option].votes, ...author]
-          }
-        }
-      }
+          },
+        },
+      };
 
-      res(vote)
+      res(vote);
     }, 500)
-  })
+  });
 }

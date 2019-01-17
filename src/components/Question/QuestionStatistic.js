@@ -1,18 +1,23 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class QuestionStatistic extends Component {
-  calculatePercentage(one, two){
-    let num = (100 * one)/(one+two)
-    return Math.round(num)
+  /**
+  * @description Calculates the percentage of people who voted for specific option
+  * @param {number} numVotes1 - number of votes for the first option
+  * @param {number} numVotes2 - number of votes for the second option
+  */
+  calculatePercentage(numVotes1, numVotes2) {
+    let num = (100 * numVotes1)/(numVotes1 + numVotes2)
+    return Math.round(num);
   }
 
   render() {
-    const { question, user } = this.props
-    const { optionOne, optionTwo } = question
-    const numVotes1 = optionOne.votes.length
-    const numVotes2 = optionTwo.votes.length
-    const sum  = numVotes1 + numVotes2    
+    const { question, user } = this.props;
+    const { optionOne, optionTwo } = question;
+    const numVotes1 = optionOne.votes.length;
+    const numVotes2 = optionTwo.votes.length;
+    const sum  = numVotes1 + numVotes2;
 
     return (
       <article>
@@ -34,16 +39,16 @@ class QuestionStatistic extends Component {
           </div>
         </div>
       </article>
-    )
+    );
   }
 }
 
 function mapStateToProps ({ questions, users }, { id }) {
-  const question = questions[id]
+  const question = questions[id];
   return {
     question,
-    user: users[question.author],
+    user: users[question.author]
   }
 }
 
-export default connect(mapStateToProps)(QuestionStatistic)
+export default connect(mapStateToProps)(QuestionStatistic);

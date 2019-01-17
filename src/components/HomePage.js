@@ -1,22 +1,26 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import PreviewQuestion from './Question/PreviewQuestion'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PreviewQuestion from './Question/PreviewQuestion';
 
 class HomePage extends Component {
   state = {
     tabState: 0
-  }
+  };
 
+  /**
+  * @description Change the state of the tabState based on the user input
+  * @param {number} num - user input
+  */
   handleTabChange = (num) => {
     this.setState({
       tabState: num
-    })
-  }
+    });
+  };
 
   render() {
-    const { userAnswerIds, userNotAnswerIds } = this.props
-    const { tabState } = this.state
-
+    const { userAnswerIds, userNotAnswerIds } = this.props;
+    const { tabState } = this.state;
+    
     return (
       <div>
         {tabState === 0
@@ -43,7 +47,7 @@ class HomePage extends Component {
             </article>
           )}
       </div>
-    )
+    );
   }
 }
 
@@ -55,7 +59,7 @@ function mapStateToProps ({ questions, users, authedUser }) {
     userNotAnswerIds: Object.keys(questions)
       .filter((id) => Object.keys(users[authedUser].answers).indexOf(id) === -1)
       .sort((a,b) => questions[b].timestamp - questions[a].timestamp),
-  }
+  };
 }
 
-export default connect(mapStateToProps)(HomePage)
+export default connect(mapStateToProps)(HomePage);

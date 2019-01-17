@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class PreviewQuestion extends Component {
   render() {
-    const { question, user} = this.props
+    const { question, user } = this.props;
 
     return (
       <section>
@@ -21,7 +21,7 @@ class PreviewQuestion extends Component {
           </div>
         </div>
       </section>
-    )
+    );
   }
 }
 
@@ -29,8 +29,8 @@ function mapStateToProps ({users, questions}, { id }) {
   const question = questions[id]
    return {
     question,
-    user: users[question.author],    
+    user: users[question.author]
   }
 }
 
-export default connect(mapStateToProps)(PreviewQuestion)
+export default connect(mapStateToProps)(PreviewQuestion);

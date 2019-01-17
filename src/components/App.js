@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { handleInitialData } from '../actions/shared'
-import LoadingBar from 'react-redux-loading-bar'
+import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { handleInitialData } from '../actions/shared';
+import LoadingBar from 'react-redux-loading-bar';
 
-import PrivateRoute from './PrivateRoute'
-import Login from './Login'
-import HomePage from './HomePage'
-import NewQuestion from './Question/NewQuestion'
-import QuestionPage from './Question/QuestionPage'
-import QuestionStatisticPage from './Question/QuestionStatisticPage'
-import LeaderBoard from './LeaderBoard'
-import NotFound from './NotFound'
+import PrivateRoute from './PrivateRoute';
+import Login from './Login';
+import HomePage from './HomePage';
+import NewQuestion from './Question/NewQuestion';
+import QuestionPage from './Question/QuestionPage';
+import QuestionStatisticPage from './Question/QuestionStatisticPage';
+import LeaderBoard from './LeaderBoard';
+import NotFound from './NotFound';
 
 class App extends Component {
+  /**
+  * @description Dispatch an action of fetching all data from the store  
+  */
   componentDidMount() {
     const { dispatch } = this.props;
-    dispatch(handleInitialData())
+    dispatch(handleInitialData());
   }
 
   render() {

@@ -1,35 +1,44 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { logIn } from '../actions/authedUser'
-import { Redirect, withRouter } from 'react-router-dom'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { logIn } from '../actions/authedUser';
+import { Redirect, withRouter } from 'react-router-dom';
 
 class Login extends Component {
   state = {
     username: '',
     redirect: this.props.isAuthenticated
-  }
+  };
 
+  /**
+  * @description Change the state of the username based on the user input
+  * @param {object} e - user input
+  */
   handleChange = (e) => {
     const username = e.target.value;
     this.setState({
       username
-    })
-  }
+    });
+  };
 
+  /**
+  * @description Dispatches an action of logging in to the store and
+  *              changes state of redirect of the component
+  * @param {object} e - submit event
+  */
   handleSubmit = (e) => {
-    e.preventDefault()
-    const { dispatch } = this.props
-    dispatch(logIn(this.state.username))
+    e.preventDefault();
+    const { dispatch } = this.props;
+    dispatch(logIn(this.state.username));
 
     this.setState(() => ({
      redirect: true,
-   }))
-  }
+   }));
+ };
 
   render() {
     const { from } = this.props.location.state || { from: { pathname: '/' } }
-    const { redirect, username } = this.state
-    const { userNames } = this.props
+    const { redirect, username } = this.state;
+    const { userNames } = this.props;
 
     if (redirect === true) {
       return <Redirect to={from} />
@@ -53,7 +62,7 @@ class Login extends Component {
           </form>
         </main>
       </div>
-    )
+    );
   }
 }
 
@@ -61,8 +70,8 @@ function mapStateToProps ({users, authedUser}) {
   return {
     userNames: Object.keys(users),
     username: authedUser,
-    isAuthenticated: users[authedUser],
-  }
+    isAuthenticated: users[authedUser]
+  };
 }
 
-export default withRouter(connect(mapStateToProps)(Login))
+export default withRouter(connect(mapStateToProps)(Login));

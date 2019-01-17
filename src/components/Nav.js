@@ -1,17 +1,19 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { NavLink, withRouter } from 'react-router-dom'
-import { logOut } from '../actions/authedUser'
-
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { NavLink, withRouter } from 'react-router-dom';
+import { logOut } from '../actions/authedUser';
 
 class Nav extends Component {
+  /**
+  * @description Dispatches an action of loging out to the store
+  */
   handleLogout = () => {
-    const { dispatch, authedUser } = this.props
-    dispatch(logOut(authedUser))
+    const { dispatch, authedUser } = this.props;
+    dispatch(logOut(authedUser));
   }
 
   render(){
-    const { isAuthenticated, username } = this.props
+    const { isAuthenticated, username } = this.props;
 
     return (
       <nav className='nav'>
@@ -44,7 +46,7 @@ class Nav extends Component {
           }
         </ul>
       </nav>
-    )
+    );
   }
 }
 
@@ -52,8 +54,8 @@ function mapStateToProps ({users, authedUser}) {
   return {
     isAuthenticated: users[authedUser],
     authedUser,
-    username: users[authedUser].name,
-  }
+    username: users[authedUser].name
+  };
 }
 
-export default withRouter(connect(mapStateToProps)(Nav))
+export default withRouter(connect(mapStateToProps)(Nav));
