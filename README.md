@@ -1,13 +1,14 @@
-# About
-This project was built with React & Redux for Udacity course. The project is an imitation of 'Would you rather game.'
-User can log in, answer questions, create his/her own question, and see questions statistic.
+
+# Would You Rather...?
+This application was built with React & Redux for Udacity course. The application is an imitation of 'Would you rather' game.
+It allows a user to login, answer questions, create his/her own questions, and see questions statistic.
+
 
 ![](./public/would-you-rather.gif)
 
+
 ## Installation
-```
-git clone https://github.com/svlesiv/would-you-rather.git
-cd would_you_rather
-npm install                    
-npm start                       
-```
+* git clone https://github.com/svlesiv/would-you-rather.git
+* navigate to `would_you_rather` directory
+* install all project dependencies with `npm install`
+* start the development server with `npm start`
