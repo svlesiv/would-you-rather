@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 class QuestionStatistic extends Component {
   /**
-  * @description Calculates the percentage of people who voted for specific option
+  * @description Calculates the percentage of people who voted for a specific option
   * @param {number} numVotes1 - number of votes for the first option
   * @param {number} numVotes2 - number of votes for the second option
   */
