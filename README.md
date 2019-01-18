@@ -1,7 +1,6 @@
-
 # Would You Rather...?
 This application was built with React & Redux for Udacity course. The application is an imitation of 'Would you rather' game.
-It allows a user to login, answer questions, create his/her own questions, and see questions statistic.
+It allows a user to log in, answer questions, create his/her own questions, and see questions statistic.
 
 
 ![](./public/would-you-rather.gif)
